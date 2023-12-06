@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import React from 'react';
+
 import './App.css';
+import NavbarComponent from './Components/Navbar/NavbarComponent'
+import FooterComponet from './Components/Footer/FooterComponet';
+import ProductDetails from './Components/Product/ProductDetails';
+import { Button, Navbar } from 'react-bootstrap';
+
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <NavbarComponent></NavbarComponent>
+        <p className='headline'>The Generics</p>
       </header>
+      <section>
+        <ProductDetails></ProductDetails>
+      </section>
+      <section className='addToCart'>
+        <Button variant="secondary">Add To Cart</Button>{' '}
+      </section>
+      <footer>
+        <FooterComponet></FooterComponet>
+      </footer>
     </div>
   );
 }

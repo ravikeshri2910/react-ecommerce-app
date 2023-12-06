@@ -1,0 +1,28 @@
+.buttonDiv {
+    display: flex;
+    /* border: 2px solid red; */
+    justify-content: space-between;
+}
+
+.carddiv {
+
+    margin-bottom: 5rem;
+    margin-left: 12rem;
+    margin-top: 1rem;
+}
+
+.image-container {
+    overflow: hidden;
+    width: 100%; /* Adjust as needed */
+    height: 250px; /* Set your preferred height */
+  }
+
+.zoom-image {
+    transition: transform 0.3s ease;
+    /* Add a smooth transition effect */
+}
+
+.zoom-image:hover {
+    transform: scale(1.2);
+    /* Adjust the scale factor as desired */
+}

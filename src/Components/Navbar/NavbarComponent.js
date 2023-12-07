@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Navbar, Nav } from "react-bootstrap";
 import './NavbarComponent.css'
-import Cart from "../Cart/Cart";
+import CartButton from "../Cart/CartButton";
 
 const NavbarComponent = (props) => {
     return (
@@ -12,7 +12,7 @@ const NavbarComponent = (props) => {
                 <Nav.Link href="#pricing">About</Nav.Link>
             </div>
             <div>
-                <Cart></Cart>
+                <CartButton onClickCart={props.onCartOpen}></CartButton>
             </div>
 
         </Navbar>

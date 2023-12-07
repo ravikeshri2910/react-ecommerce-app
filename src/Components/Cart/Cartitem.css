@@ -1,0 +1,10 @@
+.totalPrice{
+    /* border: 2px solid red; */
+    width: 100%;
+    display: flex;
+}
+
+.totalPrice h3{
+    margin-left: 60%;
+    margin-right: 5%;
+}

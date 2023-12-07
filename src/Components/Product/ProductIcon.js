@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import './ProductIcon.css'
 
 import { Card, Button } from "react-bootstrap";
+import CartContext from "../Store/CartContext";
 
 
 const ProductIcon = (props) => {
+
+    const cartcntx = useContext(CartContext)
+
+    const addToCardHandler = () =>{
+        cartcntx.addItems({...props.product,quantity : 1})
+        //    cartcntx.items.push(props.product) // update cart items
+        console.log('cartcntx', cartcntx)
+    }
+
+
     return (
         <div className="carddiv">
 
@@ -21,7 +32,7 @@ const ProductIcon = (props) => {
                         <p href="#">Rs {props.price}</p>
                     </div>
                     <div>
-                        <Button variant="primary">Add To Cart</Button>
+                        <Button onClick={addToCardHandler} variant="primary">Add To Cart</Button>
                     </div>
                 </div>
             </Card>

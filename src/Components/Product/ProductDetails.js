@@ -102,6 +102,7 @@ const ProductDetails = props => {
                         title={product.title}
                         price={product.price}
                         imageUrl={product.imageUrl}
+                        product={product}
                     />
             </>
         )

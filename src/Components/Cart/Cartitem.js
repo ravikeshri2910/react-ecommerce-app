@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import './Cartitem.css'
 import CartDetails from "./CartDetails";
+import CartContext from "../Store/CartContext";
 
 const cartElements = [
 
@@ -48,24 +49,28 @@ const Cartitem = (props) => {
 
     const [totalPrice , setTotalPrice] = useState(0)
 
+    const cartcntx = useContext(CartContext)
+
     useEffect(()=>{
         // calculating total price
 
-        const totalPrice = cartElements.reduce((total , item)=>{
+        const totalPrice = cartcntx.items.reduce((total , item)=>{
             const price = parseInt(item.price)
             const quantity = parseInt(item.quantity)
             return total + (price * quantity)
         },0)
         setTotalPrice(totalPrice)
-    },[cartElements])
+    },[cartcntx.items])
 
-    let items = cartElements.map((item) => {
+
+    let items = cartcntx.items.map((item) => {
 
         return (
 
             <>
                 <CartDetails
                     key={item.id}
+                    id={item.id}
                     title={item.title}
                     price={item.price}
                     imageUrl={item.imageUrl}

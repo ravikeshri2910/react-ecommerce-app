@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Button } from "react-bootstrap";
 
 import './CartDetails.css'
+import CartContext from "../Store/CartContext";
+
 
 const CartDetails = (props) => {
+
+    const cartcntx = useContext(CartContext)
+
+    const id = props.id
+
+    const removeCartElementHandler = () =>{
+
+        cartcntx.removeItems(id)
+        console.log(cartcntx.removeItems)
+    }
 
     return<>
      <div className="cardDetailsContainer">
@@ -18,7 +30,7 @@ const CartDetails = (props) => {
         <hr /> {/* Horizontal line */}
         <div className="quantity">
             <input defaultValue={props.quantity}></input>
-            <Button variant="danger">Remove</Button>{' '}
+            <Button onClick={removeCartElementHandler} variant="danger">Remove</Button>{' '}
         </div>
         <hr /> {/* Horizontal line */}
         

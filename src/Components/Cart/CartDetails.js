@@ -26,10 +26,12 @@ const CartDetails = (props) => {
         <hr /> {/* Horizontal line */}
         <div className="price">
             <h4>Rs {props.price}</h4>
+        
         </div>
         <hr /> {/* Horizontal line */}
         <div className="quantity">
             <input defaultValue={props.quantity}></input>
+            
             <Button onClick={removeCartElementHandler} variant="danger">Remove</Button>{' '}
         </div>
         <hr /> {/* Horizontal line */}

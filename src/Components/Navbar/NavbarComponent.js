@@ -1,21 +1,36 @@
-import React from "react";
+import React,{useState} from "react";
 import { Container, Navbar, Nav } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import './NavbarComponent.css'
 import CartButton from "../Cart/CartButton";
+import Model from '../UI/Model'
 
 const NavbarComponent = (props) => {
-    return (
-        <Navbar bg="dark" className="mt-3" data-bs-theme="dark">
-            <div className="navContainer">
-                <Nav.Link href="#home">Home</Nav.Link>
-                <Nav.Link href="#features">Store</Nav.Link>
-                <Nav.Link href="#pricing">About</Nav.Link>
-            </div>
-            <div>
-                <CartButton onClickCart={props.onCartOpen}></CartButton>
-            </div>
 
-        </Navbar>
+    const [cartOpen, setCartOpen] = useState(false)
+
+    const closeCartHandler = () => {
+        setCartOpen(false)
+    }
+    const openCartHandler = () => {
+        setCartOpen(true)
+    }
+
+    return (
+        <>
+             {cartOpen && <Model onCartClose={closeCartHandler} />}
+            <Navbar bg="dark" className="mt-3" data-bs-theme="dark">
+                <div className="navContainer">
+                    <Link to="/">Home</Link>
+                    <Link to="/store">Store</Link>
+                    <Link to='/about'>About</Link>
+                </div>
+                <div>
+                    <CartButton onClickCart={openCartHandler}></CartButton>
+                </div>
+            </Navbar>
+            <p className='headline'>The Generics</p>
+        </>
     )
 }
 

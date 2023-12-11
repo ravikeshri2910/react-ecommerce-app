@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  
+  .image {
+    flex: 1;
+  }
+  
+  .image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 50%;
+  }
+  
+  .description1 {
+    flex: 1;
+    padding-left: 20px;
+  }
+  
+  .description1 h2 {
+    margin-top: 0;
+  }
+  
+  .description1 p {
+    margin-bottom: 0;
+  }
+
+  .aboutHaed{
+    /* border: 2px solid red; */
+    text-align: center;
+  }
+  

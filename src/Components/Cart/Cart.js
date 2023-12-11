@@ -2,10 +2,12 @@ import React from "react";
 import { Button, CloseButton } from "react-bootstrap";
 import './Cart.css'
 import Cartitem from "./Cartitem";
+import CartProvider from "../Store/CartProvider";
 
 
 const Cart = (props) => {
     return (
+        // <CartProvider>
         <div className="backdrop">
             <div className="cartContainer">
 
@@ -17,7 +19,6 @@ const Cart = (props) => {
                 </div>
                 <div className="cartdetails">
                     <div>
-
                         <h3>ITEM</h3><hr />
                     </div>
                     <div>
@@ -33,10 +34,10 @@ const Cart = (props) => {
                 <Cartitem />
                 <section className="purchaseButton">
                     <Button variant="info">Purchase</Button>{' '}
-
                 </section>
             </div>
         </div>
+        // </CartProvider>
     )
 }
 

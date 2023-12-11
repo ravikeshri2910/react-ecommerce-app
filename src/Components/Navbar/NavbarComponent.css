@@ -9,3 +9,12 @@
     font-size: 25px;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+.headline{
+    background-color: grey;
+    color: white;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 100px;
+    /* border: 2px solid red; */
+    text-align: center;
+  }

@@ -2,16 +2,12 @@ import React, { useState } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import './App.css';
-// import NavbarComponent from './Components/Navbar/NavbarComponent'
-// import FooterComponet from './Components/Footer/FooterComponet';
-// import ProductDetails from './Components/Product/ProductDetails';
 import About from './Components/About/About';
 import Home from './Pages/Home'
-import RootLayout from './Pages/Root';
 import CartProvider from './Components/Store/CartProvider';
-// import Model from './Components/UI/Model';
-// import { Button, Navbar } from 'react-bootstrap';
-// import CartProvider from './Components/Store/CartProvider';
+import RootLayout from './Pages/Root';
+import Store from './Components/StoreSite/Store';
+
 
 
 const router = createBrowserRouter([
@@ -22,6 +18,7 @@ const router = createBrowserRouter([
     children: [
       { path: '/', element: <Home /> },
       { path: '/about', element: <About /> },
+      { path: '/store', element: <Store /> }
     ]
   }
 ]);
@@ -29,9 +26,11 @@ const router = createBrowserRouter([
 
 function App() {
   return (
+    <div className='App'>
     <CartProvider>
-    <RouterProvider router={router} />
+      <RouterProvider router={router} />
     </CartProvider>
+    </div>
   );
 }
 

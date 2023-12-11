@@ -8,13 +8,34 @@
     align-items: center; 
     font-size: 25px;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: aliceblue;
 }
 
-.headline{
+.link{
+ color: aliceblue;
+ text-decoration: none;
+}
+
+.head{
     background-color: grey;
     color: white;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 100px;
-    /* border: 2px solid red; */
     text-align: center;
+    margin-top: 4%;
+    /* border: 2px solid red; */
+
+}
+
+.line{
+    color: white;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: lightblue;
+      }
   }
+
+
+ 

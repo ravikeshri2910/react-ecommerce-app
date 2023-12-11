@@ -19,17 +19,17 @@ const NavbarComponent = (props) => {
     return (
         <>
              {cartOpen && <Model onCartClose={closeCartHandler} />}
-            <Navbar bg="dark" className="mt-3" data-bs-theme="dark">
+            <Navbar className="navbar" bg="dark" fixed="top" data-bs-theme="dark">
                 <div className="navContainer">
-                    <Link to="/">Home</Link>
-                    <Link to="/store">Store</Link>
-                    <Link to='/about'>About</Link>
+                    <Link className="link" to="/">Home</Link>
+                    <Link className="link" to="/store">Store</Link>
+                    <Link className="link" to='/about'>About</Link>
                 </div>
                 <div>
                     <CartButton onClickCart={openCartHandler}></CartButton>
                 </div>
             </Navbar>
-            <p className='headline'>The Generics</p>
+            <h4 className='head'>The Generics</h4>
         </>
     )
 }

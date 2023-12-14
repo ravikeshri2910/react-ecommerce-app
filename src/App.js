@@ -7,6 +7,7 @@ import Home from './Pages/Home'
 import CartProvider from './Components/Store/CartProvider';
 import RootLayout from './Pages/Root';
 import Store from './Components/StoreSite/Store';
+import ContactUs from './Pages/ContactUs';
 
 
 
@@ -18,7 +19,8 @@ const router = createBrowserRouter([
     children: [
       { path: '/', element: <Home /> },
       { path: '/about', element: <About /> },
-      { path: '/store', element: <Store /> }
+      { path: '/store', element: <Store /> },
+      { path: '/contactUs', element: <ContactUs/> },
     ]
   }
 ]);

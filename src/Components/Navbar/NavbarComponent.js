@@ -22,6 +22,7 @@ const NavbarComponent = (props) => {
             <Navbar className="navbar" bg="dark" fixed="top" data-bs-theme="dark">
                 <div className="navContainer">
                     <Link className="link" to="/">Home</Link>
+                    <Link className="link" to="/contactUs">Contact</Link>
                     <Link className="link" to="/store">Store</Link>
                     <Link className="link" to='/about'>About</Link>
                 </div>

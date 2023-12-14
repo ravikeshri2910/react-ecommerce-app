@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import './ProductDetails.css'
 import ProductIcon from "./ProductIcon";
@@ -93,6 +93,20 @@ const Dummy_Products = [
 ]
 
 const ProductDetails = props => {
+
+    function fetchDataHandler(){
+        fetch(`https://swapi.dev/api/films/`)
+        .then((response)=>{
+            return response.json();
+        })
+        .then((data)=>{
+            console.log('data' , data.results)
+        })
+    }
+
+    useEffect(()=>{
+        fetchDataHandler()
+    },[])
 
     const products = Dummy_Products.map((product) => {
         return (

@@ -101,6 +101,10 @@ const ProductDetails = props => {
         })
         .then((data)=>{
             console.log('data' , data.results)
+
+            const transformedData = data.results.map(newData =>{
+               
+            })
         })
     }
 

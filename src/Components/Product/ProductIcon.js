@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import './ProductIcon.css'
 
 import { Card, Button } from "react-bootstrap";
@@ -15,6 +16,7 @@ const ProductIcon = (props) => {
         console.log('cartcntx', cartcntx)
     }
 
+    const x= 2
 
     return (
         <div className="carddiv">
@@ -25,7 +27,7 @@ const ProductIcon = (props) => {
                     <Card.Title>{props.title}</Card.Title>
                 </Card.Body >
                 <div className="image-container">
-                <Card.Img className="zoom-image" variant="top" src={props.imageUrl} />
+                <Link to = {`/products/${props.product.title}/${props.product.imageUrl}`}><Card.Img className="zoom-image" variant="top" src={props.imageUrl} /></Link>
                 </div>
                 <div className="buttonDiv mt-3 px-2" >
                     <div>
@@ -35,7 +37,7 @@ const ProductIcon = (props) => {
                         <Button onClick={addToCardHandler} variant="primary">Add To Cart</Button>
                     </div>
                 </div>
-            </Card>
+                </Card>
         </div>
 
     )

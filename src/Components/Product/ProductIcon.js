@@ -27,7 +27,7 @@ const ProductIcon = (props) => {
                     <Card.Title>{props.title}</Card.Title>
                 </Card.Body >
                 <div className="image-container">
-                <Link to = {`/products/${props.product.title}/${props.product.imageUrl}`}><Card.Img className="zoom-image" variant="top" src={props.imageUrl} /></Link>
+                <Link to = {`/products/${props.product.id}`}><Card.Img className="zoom-image" variant="top" src={props.imageUrl} /></Link>
                 </div>
                 <div className="buttonDiv mt-3 px-2" >
                     <div>

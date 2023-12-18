@@ -38,8 +38,8 @@
 
 // export default App;
 
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 import './App.css';
 import About from './Components/About/About';
@@ -50,8 +50,12 @@ import ContactUs from './Pages/ContactUs';
 import NavbarComponent from './Components/Navbar/NavbarComponent';
 import FooterComponet from './Components/Footer/FooterComponet';
 import ProductDetails from './Pages/ProductDetailsPage';
+import LoginPage from './Pages/LoginPage';
+import AuthContext from './Components/Store/AuthContext';
 
 function App() {
+
+  const authCntx = useContext(AuthContext)
   return (
     <div className='App'>
       <CartProvider>
@@ -61,17 +65,35 @@ function App() {
             <Route path='/about'>
               <About />
             </Route>
-            <Route path='/store'>
-              <Store />
+
+            <Route path='/login'>
+              <LoginPage />
             </Route>
+
+            {
+              authCntx.isLoggedIn &&
+              <Route path='/store'>
+                <Store />
+              </Route>
+            }
             <Route path='/contactUs'>
               <ContactUs />
             </Route>
-            <Route path='/' exact>
-              <Home />
-            </Route>
-            <Route path='/products/:title/:imageUrl'>
-              <ProductDetails/>
+            {
+              authCntx.isLoggedIn &&
+              <Route path='/' exact>
+                <Home />
+              </Route>
+            }
+            {
+              authCntx.isLoggedIn &&
+              <Route path='/products/:id'>
+                <ProductDetails />
+              </Route>
+            }
+
+            <Route path='*'>
+              <Redirect to='/login' />
             </Route>
           </Switch>
         </main>

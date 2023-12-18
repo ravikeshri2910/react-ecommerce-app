@@ -5,8 +5,15 @@
     margin-top: 2%;
     margin-bottom: 5%;
     border-radius: 25px;
+    background-color: grey;
 }
 
-
+.formDiv{
+    /* border: 2px solid grey; */
+    width: 50%;
+    margin-left: 25%;
+    border-radius: 25px;
+    background-color: whitesmoke;
+}
 
  
